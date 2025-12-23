@@ -20,8 +20,9 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
+      // 代理到本地 Cloudflare Worker (wrangler dev 默认端口 8787)
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8787',
         changeOrigin: true,
       },
     },
